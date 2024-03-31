@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Shiny App</title>
+  <!-- Include necessary scripts and stylesheets -->
+  <!-- Adjust paths as needed based on your folder structure -->
+  <script src="../SCRIPTS/shiny.js"></script>
+  <link rel="stylesheet" href="../SCRIPTS/shiny.min.css">
+</head>
+<body>
+  <!-- Shiny app content -->
+  <div class="container">
+    <!-- Include your Shiny app components here -->
+    <h1>Welcome to My Shiny App!</h1>
+    <!-- Example of a Shiny UI element -->
+    <div id="myPlot" class="shiny-plot-output"></div>
+  </div>
+
+  <!-- Shiny app initialization -->
+  <script>
+    // Initialize Shiny app
+    // Adjust script paths as needed based on your folder structure
+    new Shiny.InputBinding.registerInputHandler('shiny.script',
+      function(params) {
+        // Execute your R script here
+        // Adjust script paths as needed based on your folder structure
+        return SCRIPTS.gwrf10(params); // Assuming gwrf10 is the name of your R script
+      }
+    );
+  </script>
+</body>
+</html>
